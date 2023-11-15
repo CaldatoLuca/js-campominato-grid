@@ -13,10 +13,11 @@
 ?--------
 */
 
-function elementHtmlCreator(tag, style) {
-  const elementCell = document.createElement(tag);
-  elementCell.classList.add(style);
-  return elementCell;
+function elementHtmlCreator(tag, style, content) {
+  const elementHtml = document.createElement(tag);
+  elementHtml.classList.add(style);
+  elementHtml.append(content);
+  return elementHtml;
 }
 
 /* 
@@ -26,11 +27,8 @@ function elementHtmlCreator(tag, style) {
 */
 
 const elementCellsContainer = document.querySelector(".cells-container");
-console.log(elementHtmlCreator("div", "cell"));
 
-// for (let i = 1; i <= 100; i++) {
-//   const elementCell = document.createElement("div");
-//   elementCell.append(i);
-//   elementCell.classList.add("cell");
-//   elementCellsContainer.append(elementCell);
-// }
+for (let i = 1; i <= 100; i++) {
+  const elementCell = elementHtmlCreator("div", "cell", i);
+  elementCellsContainer.append(elementCell);
+}
