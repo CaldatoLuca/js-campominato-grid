@@ -19,6 +19,13 @@ function elementHtmlCreator(tag, style) {
   return elementHtml;
 }
 
+function createCells(count) {
+  for (let i = 1; i <= count; i++) {
+    const elementCell = elementHtmlCreator("div", "cell");
+    elementCell.append(i);
+    elementCellsContainer.append(elementCell);
+  }
+}
 /* 
 ?--------
 !CODICE
@@ -30,13 +37,13 @@ const elementCellsContainer = document.querySelector(".cells-container");
 const elementButtonPlay = document.getElementById("play");
 const elementButtonReset = document.getElementById("reset");
 const elementMessage = document.querySelector(".messages");
+const elementSelect = document.getElementById("levels");
 
-//* ciclo for per inserire le celle nel container (richiama la funzione che le crea e poi inserisce)
-for (let i = 1; i <= 100; i++) {
-  const elementCell = elementHtmlCreator("div", "cell");
-  elementCell.append(i);
-  elementCellsContainer.append(elementCell);
-}
+//* variabili
+let level = 50;
+
+//*richiamo la variabile che crea le celle
+createCells(level);
 
 //* creo falso array che raccoglie tutte le mie celle
 const cellsAll = document.querySelectorAll(".cell");
@@ -60,3 +67,9 @@ for (let i = 0; i < cellsAll.length; i++) {
     cellsAll[i].classList.remove("cell-bg");
   });
 }
+
+//! condizioni per cambiare livello, aggiungere click sulla select, appena carico pagina elementSelect.value è subito === 0, non ho tempo di cambiare
+// //*condizioni sul livello per cambiare valore di level
+// if (+elementSelect.value === 1) level = 100;
+// if (+elementSelect.value === 2) level = 81;
+// if (+elementSelect.value === 3) level = 49;
