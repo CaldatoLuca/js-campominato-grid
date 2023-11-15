@@ -28,6 +28,9 @@ header {
   justify-content: space-between;
   padding: 1.875rem;
 }
+header .titolo img {
+  margin-right: 20px;
+}
 /* 
 ?--------
 !MAIN
@@ -40,7 +43,6 @@ main {
 main .cells-container {
   width: 700px;
   height: 700px;
-
   flex-wrap: wrap;
   align-content: flex-start;
 }
@@ -51,6 +53,9 @@ main .cells-container .cell {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+main h2 {
+  color: red;
 }
 /* 
 ?--------

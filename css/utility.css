@@ -1,18 +1,26 @@
 /* 
 ?--------
-!FLEX
+!Display
 ?--------
 */
 .flex {
   display: flex;
 }
+.none {
+  display: none;
+}
+/* 
+?--------
+!Centratura
+?--------
+*/
 .center {
   align-items: center;
   justify-content: center;
 }
 /* 
 ?--------
-!ELEMENTO BOTTONE
+!Bottone
 ?--------
 */
 .btn {
