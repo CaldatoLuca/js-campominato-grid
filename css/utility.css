@@ -10,3 +10,11 @@
   align-items: center;
   justify-content: center;
 }
+/* 
+?--------
+!ELEMENTO BOTTONE
+?--------
+*/
+.btn {
+  padding: 0px 30px;
+}

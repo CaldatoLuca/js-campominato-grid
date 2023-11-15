@@ -37,6 +37,18 @@ main {
   background-color: aquamarine;
   flex-grow: 1;
 }
+main .cells-container {
+  width: 700px;
+  height: 700px;
+
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+main .cells-container .cell {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+  border: 1px solid black;
+}
 /* 
 ?--------
 !FOOTER
