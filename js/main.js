@@ -32,3 +32,5 @@ for (let i = 1; i <= 100; i++) {
   const elementCell = elementHtmlCreator("div", "cell", i);
   elementCellsContainer.append(elementCell);
 }
+
+//!TODO evento click su bottone e sulle celle (bonus)
