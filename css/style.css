@@ -1,0 +1,47 @@
+@import url(utility.css);
+/* 
+?--------
+!RESET
+?--------
+*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/* 
+?--------
+!COMMON
+?--------
+*/
+body {
+  height: 100vh;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+/* 
+?--------
+!HEADER
+?--------
+*/
+header {
+  justify-content: space-between;
+  padding: 1.875rem;
+}
+/* 
+?--------
+!MAIN
+?--------
+*/
+main {
+  background-color: aquamarine;
+  flex-grow: 1;
+}
+/* 
+?--------
+!FOOTER
+?--------
+*/
+footer {
+  padding: 1.25rem;
+}
