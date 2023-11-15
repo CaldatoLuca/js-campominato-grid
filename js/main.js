@@ -40,7 +40,7 @@ const elementMessage = document.querySelector(".messages");
 const elementSelect = document.getElementById("levels");
 
 //* variabili
-let level = 50;
+let level = 100;
 
 //*richiamo la variabile che crea le celle
 createCells(level);
