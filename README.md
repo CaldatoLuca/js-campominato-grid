@@ -27,3 +27,4 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 5. La generazione delle caselle dovrà essere gestita da una funzione a cui darò come input (l' elemento da creare, la sua classe e la quantità)
 6. Creare sul bottone un evento click che farà comparire la tabella (gestire una classe diplay none / block)
 7. Creare, per ogni casella un evento click che le darà uno sfondo (classe .bg) e faccia comparire in console il suo indice/.innerHTML
+8. BONUS Creare una variabile che cambi valore (100, 81, 49) a seconda del .value della select (da inserire in un click e possibilmente in una funzione)
