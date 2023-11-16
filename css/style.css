@@ -47,12 +47,22 @@ main .cells-container {
   align-content: flex-start;
 }
 main .cells-container .cell {
-  width: calc(100% / 10);
-  height: calc(100% / 10);
   border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+main .cells-container .cell-7 {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+}
+main .cells-container .cell-9 {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+main .cells-container .cell-10 {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
 }
 main h2 {
   color: red;

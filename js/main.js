@@ -1,31 +1,76 @@
 "use strict";
 
-/* <div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div>
-<div class="cell"></div> */
-
 /* 
 ?--------
 !FUNZIONI
 ?--------
 */
 
-function elementHtmlCreator(tag, style) {
+function elementHtmlCreator(tag, style, style2) {
   const elementHtml = document.createElement(tag);
   elementHtml.classList.add(style);
+  elementHtml.classList.add(style2);
   return elementHtml;
 }
 
 function createCells(count) {
   for (let i = 1; i <= count; i++) {
-    const elementCell = elementHtmlCreator("div", "cell");
+    const elementCell = elementHtmlCreator(
+      "div",
+      "cell",
+      `cell-${Math.sqrt(count)}`
+    );
     elementCell.append(i);
+    eventCell(elementCell);
     elementCellsContainer.append(elementCell);
   }
 }
+
+function eventCell(element) {
+  element.addEventListener("click", function () {
+    console.log(element.innerHTML);
+    element.classList.add("cell-bg");
+  });
+  elementButtonReset.addEventListener("click", function () {
+    element.classList.remove("cell-bg");
+  });
+}
+
+function buttonReset() {
+  elementButtonReset.addEventListener("click", function () {
+    elementCellsContainer.classList.add("none");
+    elementMessage.classList.remove("none");
+    elementCellsContainer.innerHTML = "";
+  });
+}
+
+function pratoFiorito() {
+  buttonReset();
+
+  //* variabili
+  let level = +elementSelect.value;
+  let cellNumber = 0;
+
+  switch (level) {
+    case 2:
+      cellNumber = 81;
+      break;
+
+    case 3:
+      cellNumber = 49;
+
+      break;
+
+    case 1:
+    default:
+      cellNumber = 100;
+      break;
+  }
+
+  //*richiamo la variabile che crea le celle
+  createCells(cellNumber);
+}
+
 /* 
 ?--------
 !CODICE
@@ -39,37 +84,10 @@ const elementButtonReset = document.getElementById("reset");
 const elementMessage = document.querySelector(".messages");
 const elementSelect = document.getElementById("levels");
 
-//* variabili
-let level = 100;
-
-//*richiamo la variabile che crea le celle
-createCells(level);
-
-//* creo falso array che raccoglie tutte le mie celle
-const cellsAll = document.querySelectorAll(".cell");
-
 //* evento click sul bottone
 elementButtonPlay.addEventListener("click", function () {
+  elementCellsContainer.innerHTML = "";
+  pratoFiorito();
   elementCellsContainer.classList.toggle("none");
   elementMessage.classList.toggle("none");
 });
-
-//* ciclo for per aggiungere un evento click a ogni cella
-for (let i = 0; i < cellsAll.length; i++) {
-  cellsAll[i].addEventListener("click", function () {
-    console.log(cellsAll[i].innerHTML);
-    cellsAll[i].classList.add("cell-bg");
-  });
-
-  elementButtonReset.addEventListener("click", function () {
-    elementCellsContainer.classList.add("none");
-    elementMessage.classList.remove("none");
-    cellsAll[i].classList.remove("cell-bg");
-  });
-}
-
-//! condizioni per cambiare livello, aggiungere click sulla select, appena carico pagina elementSelect.value è subito === 0, non ho tempo di cambiare
-// //*condizioni sul livello per cambiare valore di level
-// if (+elementSelect.value === 1) level = 100;
-// if (+elementSelect.value === 2) level = 81;
-// if (+elementSelect.value === 3) level = 49;
